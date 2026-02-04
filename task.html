@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TASK 1</title>
+    <style>
+        .loading{
+            font-size:30px;
+            animation:blink 1s infinite;
+            color:blue;
+        }
+        @keyframes blink{
+            from{opacity:1;}
+            to{opacity:0;}
+        }
+
+        .circle{
+            width:60px;
+            height:60px;
+            border:6px solid lightgray;
+            border-top:6px solid rgb(0, 0, 0);
+            border-radius:50%;
+            animation:rotate 1s linear infinite;
+        }
+        @keyframes rotate{
+            from{transform:rotate(0deg);}
+            to{transform:rotate(360deg);}
+        }
+
+        .dot{
+            width:15px;
+            height:15px;
+            background:black;
+            border-radius:50%;
+            display:inline-block;
+            animation:bounce 0.6s infinite alternate;
+        }
+        @keyframes bounce{
+            from{transform:translateY(0);}
+            to{transform:translateY(-20px);}
+        }
+
+        .logo-box{
+            width:90px;
+            height:90px;
+            background:rgb(98, 98, 50);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            animation:floating 2s infinite ease-in-out;
+        }
+        @keyframes floating{
+            from{transform:translateY(0);}
+            to{transform:translateY(-15px);}
+        }
+
+        .bar{
+            width:200px;
+            height:20px;
+            border:1px solid black;
+        }
+        .progress{
+            height:100%;
+            width:0;
+            background:green;
+            animation:load 3s infinite;
+        }
+        @keyframes load{
+            from{width:0;}
+            to{width:100%;}
+        }
+    </style>
+</head>
+<body>
+    <h2>Task 1: Blinking Text Loader</h2>
+    <h2 class="loading">Loading...</h2>
+
+    <h2>Task 2: Rotating Circular Loader</h2>
+    <div class="circle"></div>
+
+    <h2>Task 3: Bouncing Dots</h2>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+
+    <h2>Task 4: Floating Logo</h2>
+    <div class="logo-box">
+        <strong>LOGO</strong>
+    </div>
+
+    <h2>Task 5: Sliding Progress Bar</h2>
+    <div class="bar">
+        <div class="progress"></div>
+    </div>
+</body>
+</html>
