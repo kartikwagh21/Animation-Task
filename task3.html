@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TASK</title>
+    <style>
+        body {
+            background-color: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        .card-container {
+            display: flex;
+            gap: 20px;
+            perspective: 1000px;
+        }
+
+        .card {
+            width: 200px;
+            height: 300px;
+            border-radius: 15px;
+            border: 8px solid rgb(255, 255, 255);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transform: rotateY(20deg);
+            
+            filter: grayscale(100%) blur(3px);
+            
+            transition: transform 0.4s ease, filter 0.4s ease, opacity 0.4s ease;
+        }
+        .card-container:hover .card {
+            opacity: 0.5;
+        }
+        .card-container:hover .card:hover {
+            opacity: 1;
+            filter: grayscale(0%) blur(0px) brightness(1.2);
+            transform: rotateY(0deg) scale(1.1);
+            z-index: 10;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+        }
+
+        .red { background-color: #d90429; }
+        .blue { background-color: #0077b6; }
+        .yellow { background-color: #ffb703; }
+
+        .innercircle {
+            width: 140px;
+            height: 180px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 80px;
+            font-weight: bold;
+        }
+
+        .red .innercircle { color: #d90429; }
+        .blue .innercircle { color: #0077b6; }
+        .yellow .innercircle { color: #ffb703; }
+
+        .label {
+            color: white;
+            margin-top: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card red">
+            <div class="innercircle">S</div>
+            <div class="label">Skip</div>
+        </div>
+
+        <div class="card blue">
+            <div class="innercircle">+2</div>
+            <div class="label">Draw Two</div>
+        </div>
+
+        <div class="card yellow">
+            <div class="innercircle">R</div>
+            <div class="label">Reverse</div>
+        </div>
+    </div>
+</body>
+</html>
